@@ -1,0 +1,12 @@
+version: '3.0'
+services:
+  server:
+    container_name: hot-reloading
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PYTHON_ENV=development
+    volumes:
+      - ./FilesPy:/usr/src/app
+    command: tail -f /dev/null
